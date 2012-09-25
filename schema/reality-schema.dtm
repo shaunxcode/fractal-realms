@@ -1,0 +1,63 @@
+[
+ ;; region
+ {:db/id #db/id[:db.part/db]
+  :db/ident :region/name
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/fulltext true
+  :db/doc "A regions name"
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :region/edge
+  :db/valueType :db.type/ref
+  :db/cardinality :db.cardinality/many
+  :db/doc "All region edges"
+  :db.install/_attribute :db.part/db}
+
+ ;; edge
+ {:db/id #db/id[:db.part/db]
+  :db/ident :edge/first-point
+  :db/valueType :db.type/ref
+  :db/cardinality :db.cardinality/one
+  :db/doc "An edges first point attribute"
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :edge/second-point
+  :db/valueType :db.type/ref
+  :db/cardinality :db.cardinality/one
+  :db/doc "An edges second point attribute"
+  :db.install/_attribute :db.part/db}
+
+ ;; point 
+ {:db/id #db/id[:db.part/db]
+  :db/ident :point/x
+  :db/valueType :db.type/float
+  :db/cardinality :db.cardinality/one
+  :db/doc "An points x attribute"
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :point/y
+  :db/valueType :db.type/float
+  :db/cardinality :db.cardinality/one
+  :db/doc "An points y attribute"
+  :db.install/_attribute :db.part/db}
+
+ ;; actor
+ {:db/id #db/id[:db.part/db]
+  :db/ident :actor/name
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "An actors name attribute"
+  :db/fulltext true
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :actor/position-point
+  :db/valueType :db.type/ref
+  :db/cardinality :db.cardinality/one
+  :db/doc "An actors position point attribute"
+  :db.install/_attribute :db.part/db}
+]
